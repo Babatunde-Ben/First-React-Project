@@ -6,7 +6,7 @@ export default function App() {
     {
       id: "1",
 
-      title: "Steam",
+       title: "Steam",
 
       currencies: [
         "usd",
