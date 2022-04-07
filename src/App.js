@@ -1,1208 +1,1064 @@
 import "./styles.css";
-import DataList from "./components/Data.js"
+import DataList from "./components/Data.js";
 
 export default function App() {
-const allGiftCards = [
+  const allGiftCards = [
+    {
+      id: "1",
 
-  {
+      title: "Steam",
 
-        id: "1",
+      currencies: [
+        "usd",
 
-        title: "Steam",
+        "gbp",
 
-        currencies: [
+        "eur",
 
-          "usd",
+        "aud",
 
-          "gbp",
+        "cad",
 
-          "eur",
+        "nzd",
 
-          "aud",
+        "chf",
 
-          "cad",
+        "brl",
 
-          "nzd",
+        "pol",
 
-          "chf",
+        "hkd",
+      ],
+    },
 
-          "brl",
+    {
+      id: "2",
 
-          "pol",
+      title: "Apple Universal",
 
-          "hkd",
+      currencies: ["usd", "gbp", "eur", "aud", "cad", "nzd", "chf"],
+    },
 
-        ],
+    {
+      id: "3",
 
-  },
+      title: "iTunes",
 
-  {
+      currencies: [
+        "usd",
 
-        id: "2",
+        "gbp",
 
-        title: "Apple Universal",
+        "eur",
 
-        currencies: ["usd", "gbp", "eur", "aud", "cad", "nzd", "chf"],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "3",
+        "chf",
 
-        title: "iTunes",
+        "grc",
 
-        currencies: [
+        "prt",
 
-          "usd",
+        "nld",
 
-          "gbp",
+        "bel",
 
-          "eur",
+        "fin",
 
-          "aud",
+        "sgd",
 
-          "cad",
+        "ger",
 
-          "nzd",
+        "aut",
 
-          "chf",
+        "fra",
 
-          "grc",
+        "itl",
 
-          "prt",
+        "esp",
 
-          "nld",
+        "irl",
 
-          "bel",
+        "hkd",
 
-          "fin",
+        "dmk",
 
-          "sgd",
+        "pln",
 
-          "ger",
+        "rub",
 
-          "aut",
+        "tur",
 
-          "fra",
+        "brl",
 
-          "itl",
+        "nok",
 
-          "esp",
+        "swe",
 
-          "irl",
+        "zar",
 
-          "hkd",
+        "mxn",
 
-          "dmk",
+        "twd",
 
-          "pln",
+        "jpy",
+      ],
+    },
 
-          "rub",
+    {
+      id: "4",
 
-          "tur",
+      title: "Google Play",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "nok",
+        "gbp",
 
-          "swe",
+        "eur",
 
-          "zar",
+        "aud",
 
-          "mxn",
+        "cad",
 
-          "twd",
+        "nzd",
 
-          "jpy",
+        "chf",
 
-        ],
+        "sgd",
 
-  },
+        "jpy",
 
-  {
+        "brl",
 
-        id: "4",
+        "pln",
 
-        title: "Google Play",
+        "mxn",
 
-        currencies: [
+        "zar",
 
-          "usd",
+        "hkd",
 
-          "gbp",
+        "idr",
 
-          "eur",
+        "thb",
 
-          "aud",
+        "myr",
 
-          "cad",
+        "tur",
 
-          "nzd",
+        "krw",
+      ],
+    },
 
-          "chf",
+    {
+      id: "5",
 
-          "sgd",
+      title: "Amazon",
 
-          "jpy",
+      currencies: [
+        "usd",
 
-          "brl",
+        "gbp",
 
-          "pln",
+        "eur",
 
-          "mxn",
+        "aud",
 
-          "zar",
+        "cad",
 
-          "hkd",
+        "nzd",
 
-          "idr",
+        "chf",
 
-          "thb",
+        "brl",
 
-          "myr",
+        "pol",
 
-          "tur",
+        "hkd",
+      ],
+    },
 
-          "krw",
+    {
+      id: "6",
 
-        ],
+      title: "Ebay",
 
-  },
+      currencies: [
+        "usd",
 
-  {
+        "gbp",
 
-        id: "5",
+        "eur",
 
-        title: "Amazon",
+        "aud",
 
-        currencies: [
+        "cad",
 
-          "usd",
+        "nzd",
 
-          "gbp",
+        "chf",
 
-          "eur",
+        "brl",
 
-          "aud",
+        "pol",
 
-          "cad",
+        "hkd",
+      ],
+    },
 
-          "nzd",
+    {
+      id: "7",
 
-          "chf",
+      title: "Sephora",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "pol",
+        "gbp",
 
-          "hkd",
+        "eur",
 
-        ],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "6",
+        "chf",
 
-        title: "Ebay",
+        "brl",
 
-        currencies: [
+        "pol",
 
-          "usd",
+        "hkd",
+      ],
+    },
 
-          "gbp",
+    {
+      id: "8",
 
-          "eur",
+      title: "American Express",
 
-          "aud",
+      currencies: [
+        "usd",
 
-          "cad",
+        "gbp",
 
-          "nzd",
+        "eur",
 
-          "chf",
+        "aud",
 
-          "brl",
+        "cad",
 
-          "pol",
+        "nzd",
 
-          "hkd",
+        "chf",
 
-        ],
+        "brl",
 
-  },
+        "pol",
 
-  {
+        "hkd",
+      ],
+    },
 
-        id: "7",
+    {
+      id: "9",
 
-        title: "Sephora",
+      title: "Vanilla",
 
-        currencies: [
+      currencies: [
+        "usd",
 
-          "usd",
+        "gbp",
 
-          "gbp",
+        "eur",
 
-          "eur",
+        "aud",
 
-          "aud",
+        "cad",
 
-          "cad",
+        "nzd",
 
-          "nzd",
+        "chf",
 
-          "chf",
+        "brl",
 
-          "brl",
+        "pol",
 
-          "pol",
+        "hkd",
+      ],
+    },
 
-          "hkd",
+    {
+      id: "10",
 
-        ],
+      title: "Walmart",
 
-  },
+      currencies: [
+        "usd",
 
-  {
+        "gbp",
 
-        id: "8",
+        "eur",
 
-        title: "American Express",
+        "aud",
 
-        currencies: [
+        "cad",
 
-          "usd",
+        "nzd",
 
-          "gbp",
+        "chf",
 
-          "eur",
+        "brl",
 
-          "aud",
+        "pol",
 
-          "cad",
+        "hkd",
+      ],
+    },
 
-          "nzd",
+    {
+      id: "11",
 
-          "chf",
+      title: "Nordstrom",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "pol",
+        "gbp",
 
-          "hkd",
+        "eur",
 
-        ],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "9",
+        "chf",
 
-        title: "Vanilla",
+        "brl",
 
-        currencies: [
+        "pol",
 
-          "usd",
+        "hkd",
+      ],
+    },
 
-          "gbp",
+    {
+      id: "12",
 
-          "eur",
+      title: "Target",
 
-          "aud",
+      currencies: [
+        "usd",
 
-          "cad",
+        "gbp",
 
-          "nzd",
+        "eur",
 
-          "chf",
+        "aud",
 
-          "brl",
+        "cad",
 
-          "pol",
+        "nzd",
 
-          "hkd",
+        "chf",
 
-        ],
+        "brl",
 
-  },
+        "pol",
 
-  {
+        "hkd",
+      ],
+    },
 
-        id: "10",
+    {
+      id: "13",
 
-        title: "Walmart",
+      title: "Offgamers",
 
-        currencies: [
+      currencies: [
+        "usd",
 
-          "usd",
+        "gbp",
 
-          "gbp",
+        "eur",
 
-          "eur",
+        "aud",
 
-          "aud",
+        "cad",
 
-          "cad",
+        "nzd",
 
-          "nzd",
+        "chf",
 
-          "chf",
+        "brl",
 
-          "brl",
+        "pol",
 
-          "pol",
+        "hkd",
+      ],
+    },
 
-          "hkd",
+    {
+      id: "14",
 
-        ],
+      title: "Xbox",
 
-  },
+      currencies: [
+        "usd",
 
-  {
+        "gbp",
 
-        id: "11",
+        "eur",
 
-        title: "Nordstrom",
+        "aud",
 
-        currencies: [
+        "cad",
 
-          "usd",
+        "nzd",
 
-          "gbp",
+        "chf",
 
-          "eur",
+        "brl",
 
-          "aud",
+        "pol",
 
-          "cad",
+        "hkd",
+      ],
+    },
 
-          "nzd",
+    {
+      id: "15",
 
-          "chf",
+      title: "Macy’s",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "pol",
+        "gbp",
 
-          "hkd",
+        "eur",
 
-        ],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "12",
+        "chf",
 
-        title: "Target",
+        "brl",
 
-        currencies: [
+        "pol",
 
-          "usd",
+        "hkd",
+      ],
+    },
 
-          "gbp",
+    {
+      id: "16",
 
-          "eur",
+      title: "Razer Gold",
 
-          "aud",
+      currencies: [
+        "usd",
 
-          "cad",
+        "gbp",
 
-          "nzd",
+        "eur",
 
-          "chf",
+        "aud",
 
-          "brl",
+        "cad",
 
-          "pol",
+        "nzd",
 
-          "hkd",
+        "chf",
 
-        ],
+        "brl",
 
-  },
+        "pol",
 
-  {
+        "hkd",
+      ],
+    },
 
-        id: "13",
+    {
+      id: "17",
 
-        title: "Offgamers",
+      title: "JCPenny",
 
-        currencies: [
+      currencies: [
+        "usd",
 
-          "usd",
+        "gbp",
 
-          "gbp",
+        "eur",
 
-          "eur",
+        "aud",
 
-          "aud",
+        "cad",
 
-          "cad",
+        "nzd",
 
-          "nzd",
+        "chf",
 
-          "chf",
+        "brl",
 
-          "brl",
+        "pol",
 
-          "pol",
+        "hkd",
+      ],
+    },
 
-          "hkd",
+    {
+      id: "18",
 
-        ],
+      title: "Foot Locker",
 
-  },
+      currencies: [
+        "usd",
 
-  {
+        "gbp",
 
-        id: "14",
+        "eur",
 
-        title: "Xbox",
+        "aud",
 
-        currencies: [
+        "cad",
 
-          "usd",
+        "nzd",
 
-          "gbp",
+        "chf",
 
-          "eur",
+        "brl",
 
-          "aud",
+        "pol",
 
-          "cad",
+        "hkd",
+      ],
+    },
 
-          "nzd",
+    {
+      id: "19",
 
-          "chf",
+      title: "Nike",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "pol",
+        "gbp",
 
-          "hkd",
+        "eur",
 
-        ],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "15",
+        "chf",
 
-        title: "Macy’s",
+        "brl",
 
-        currencies: [
+        "pol",
 
-          "usd",
+        "hkd",
+      ],
+    },
 
-          "gbp",
+    {
+      id: "20",
 
-          "eur",
+      title: "Visa",
 
-          "aud",
+      currencies: [
+        "usd",
 
-          "cad",
+        "gbp",
 
-          "nzd",
+        "eur",
 
-          "chf",
+        "aud",
 
-          "brl",
+        "cad",
 
-          "pol",
+        "nzd",
 
-          "hkd",
+        "chf",
 
-        ],
+        "brl",
 
-  },
+        "pol",
 
-  {
+        "hkd",
+      ],
+    },
 
-        id: "16",
+    {
+      id: "21",
 
-        title: "Razer Gold",
+      title: "Target Visa",
 
-        currencies: [
+      currencies: [
+        "usd",
 
-          "usd",
+        "gbp",
 
-          "gbp",
+        "eur",
 
-          "eur",
+        "aud",
 
-          "aud",
+        "cad",
 
-          "cad",
+        "nzd",
 
-          "nzd",
+        "chf",
 
-          "chf",
+        "brl",
 
-          "brl",
+        "pol",
 
-          "pol",
+        "hkd",
+      ],
+    },
 
-          "hkd",
+    {
+      id: "22",
 
-        ],
+      title: "Walmart Visa",
 
-  },
+      currencies: [
+        "usd",
 
-  {
+        "gbp",
 
-        id: "17",
+        "eur",
 
-        title: "JCPenny",
+        "aud",
 
-        currencies: [
+        "cad",
 
-          "usd",
+        "nzd",
 
-          "gbp",
+        "chf",
 
-          "eur",
+        "brl",
 
-          "aud",
+        "pol",
 
-          "cad",
+        "hkd",
+      ],
+    },
 
-          "nzd",
+    {
+      id: "23",
 
-          "chf",
+      title: "Greendot",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "pol",
+        "gbp",
 
-          "hkd",
+        "eur",
 
-        ],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "18",
+        "chf",
 
-        title: "Foot Locker",
+        "brl",
 
-        currencies: [
+        "pol",
 
-          "usd",
+        "hkd",
+      ],
+    },
 
-          "gbp",
+    {
+      id: "24",
 
-          "eur",
+      title: "Best Buy ",
 
-          "aud",
+      currencies: [
+        "usd",
 
-          "cad",
+        "gbp",
 
-          "nzd",
+        "eur",
 
-          "chf",
+        "aud",
 
-          "brl",
+        "cad",
 
-          "pol",
+        "nzd",
 
-          "hkd",
+        "chf",
 
-        ],
+        "brl",
 
-  },
+        "pol",
 
-  {
+        "hkd",
+      ],
+    },
 
-        id: "19",
+    {
+      id: "25",
 
-        title: "Nike",
+      title: "Play Station",
 
-        currencies: [
+      currencies: [
+        "usd",
 
-          "usd",
+        "gbp",
 
-          "gbp",
+        "eur",
 
-          "eur",
+        "aud",
 
-          "aud",
+        "cad",
 
-          "cad",
+        "nzd",
 
-          "nzd",
+        "chf",
 
-          "chf",
+        "brl",
 
-          "brl",
+        "pol",
 
-          "pol",
+        "hkd",
+      ],
+    },
 
-          "hkd",
+    {
+      id: "26",
 
-        ],
+      title: "Home Depot",
 
-  },
+      currencies: [
+        "usd",
 
-  {
+        "gbp",
 
-        id: "20",
+        "eur",
 
-        title: "Visa",
+        "aud",
 
-        currencies: [
+        "cad",
 
-          "usd",
+        "nzd",
 
-          "gbp",
+        "chf",
 
-          "eur",
+        "brl",
 
-          "aud",
+        "pol",
 
-          "cad",
+        "hkd",
+      ],
+    },
 
-          "nzd",
+    {
+      id: "27",
 
-          "chf",
+      title: "Starbucks",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "pol",
+        "gbp",
 
-          "hkd",
+        "eur",
 
-        ],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "21",
+        "chf",
 
-        title: "Target Visa",
+        "brl",
 
-        currencies: [
+        "pol",
 
-          "usd",
+        "hkd",
+      ],
+    },
 
-          "gbp",
+    {
+      id: "28",
 
-          "eur",
+      title: "Netflix",
 
-          "aud",
+      currencies: [
+        "usd",
 
-          "cad",
+        "gbp",
 
-          "nzd",
+        "eur",
 
-          "chf",
+        "aud",
 
-          "brl",
+        "cad",
 
-          "pol",
+        "nzd",
 
-          "hkd",
+        "chf",
 
-        ],
+        "brl",
 
-  },
+        "pol",
 
-  {
+        "hkd",
+      ],
+    },
 
-        id: "22",
+    {
+      id: "29",
 
-        title: "Walmart Visa",
+      title: "Happy",
 
-        currencies: [
+      currencies: [
+        "usd",
 
-          "usd",
+        "gbp",
 
-          "gbp",
+        "eur",
 
-          "eur",
+        "aud",
 
-          "aud",
+        "cad",
 
-          "cad",
+        "nzd",
 
-          "nzd",
+        "chf",
 
-          "chf",
+        "brl",
 
-          "brl",
+        "pol",
 
-          "pol",
+        "hkd",
+      ],
+    },
 
-          "hkd",
+    {
+      id: "30",
 
-        ],
+      title: "Lowe’s",
 
-  },
+      currencies: [
+        "usd",
 
-  {
+        "gbp",
 
-        id: "23",
+        "eur",
 
-        title: "Greendot",
+        "aud",
 
-        currencies: [
+        "cad",
 
-          "usd",
+        "nzd",
 
-          "gbp",
+        "chf",
 
-          "eur",
+        "brl",
 
-          "aud",
+        "pol",
 
-          "cad",
+        "hkd",
+      ],
+    },
 
-          "nzd",
+    {
+      id: "31",
 
-          "chf",
+      title: "Gamestop",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "pol",
+        "gbp",
 
-          "hkd",
+        "eur",
 
-        ],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "24",
+        "chf",
 
-        title: "Best Buy ",
+        "brl",
 
-        currencies: [
+        "pol",
 
-          "usd",
+        "hkd",
+      ],
+    },
 
-          "gbp",
+    {
+      id: "32",
 
-          "eur",
+      title: "Uber",
 
-          "aud",
+      currencies: [
+        "usd",
 
-          "cad",
+        "gbp",
 
-          "nzd",
+        "eur",
 
-          "chf",
+        "aud",
 
-          "brl",
+        "cad",
 
-          "pol",
+        "nzd",
 
-          "hkd",
+        "chf",
 
-        ],
+        "brl",
 
-  },
+        "pol",
 
-  {
+        "hkd",
+      ],
+    },
 
-        id: "25",
+    {
+      id: "33",
 
-        title: "Play Station",
+      title: "Adiddas",
 
-        currencies: [
+      currencies: [
+        "usd",
 
-          "usd",
+        "gbp",
 
-          "gbp",
+        "eur",
 
-          "eur",
+        "aud",
 
-          "aud",
+        "cad",
 
-          "cad",
+        "nzd",
 
-          "nzd",
+        "chf",
 
-          "chf",
+        "brl",
 
-          "brl",
+        "pol",
 
-          "pol",
+        "hkd",
+      ],
+    },
 
-          "hkd",
+    {
+      id: "34",
 
-        ],
+      title: "G2A",
 
-  },
+      currencies: [
+        "usd",
 
-  {
+        "gbp",
 
-        id: "26",
+        "eur",
 
-        title: "Home Depot",
+        "aud",
 
-        currencies: [
+        "cad",
 
-          "usd",
+        "nzd",
 
-          "gbp",
+        "chf",
 
-          "eur",
+        "brl",
 
-          "aud",
+        "pol",
 
-          "cad",
+        "hkd",
+      ],
+    },
 
-          "nzd",
+    {
+      id: "35",
 
-          "chf",
+      title: "Hotels",
 
-          "brl",
+      currencies: [
+        "usd",
 
-          "pol",
+        "gbp",
 
-          "hkd",
+        "eur",
 
-        ],
+        "aud",
 
-  },
+        "cad",
 
-  {
+        "nzd",
 
-        id: "27",
+        "chf",
 
-        title: "Starbucks",
+        "brl",
 
-        currencies: [
+        "pol",
 
-          "usd",
+        "hkd",
+      ],
+    },
 
-          "gbp",
+    {
+      id: "36",
 
-          "eur",
+      title: "Finish Line",
 
-          "aud",
+      currencies: [
+        "usd",
 
-          "cad",
+        "gbp",
 
-          "nzd",
+        "eur",
 
-          "chf",
+        "aud",
 
-          "brl",
+        "cad",
 
-          "pol",
+        "nzd",
 
-          "hkd",
+        "chf",
 
-        ],
+        "brl",
 
-  },
+        "pol",
 
-  {
-
-        id: "28",
-
-        title: "Netflix",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-  {
-
-        id: "29",
-
-        title: "Happy",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-  {
-
-        id: "30",
-
-        title: "Lowe’s",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-  {
-
-        id: "31",
-
-        title: "Gamestop",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-  {
-
-        id: "32",
-
-        title: "Uber",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-  {
-
-        id: "33",
-
-        title: "Adiddas",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-  {
-
-        id: "34",
-
-        title: "G2A",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-  {
-
-        id: "35",
-
-        title: "Hotels",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-  {
-
-        id: "36",
-
-        title: "Finish Line",
-
-        currencies: [
-
-          "usd",
-
-          "gbp",
-
-          "eur",
-
-          "aud",
-
-          "cad",
-
-          "nzd",
-
-          "chf",
-
-          "brl",
-
-          "pol",
-
-          "hkd",
-
-        ],
-
-  },
-
-];
+        "hkd",
+      ],
+    },
+  ];
 
   return (
     <div className="App">
-    <h1 className="header">List of cards</h1>
-      
+      <h1 className="header">List of cards</h1>
+
       <DataList allCards={allGiftCards} />
-     
-<div className="footer"> Designed by Babatunde Adeniyi </div>
+
+      <div className="footer"> Designed by Babatunde Adeniyi </div>
     </div>
   );
 }
