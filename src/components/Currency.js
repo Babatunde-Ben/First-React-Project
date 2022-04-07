@@ -1,5 +1,3 @@
-// render li of currencies here using list
-// pass the allGiftCards as parameter(props)
 
 import React from "react"
 
